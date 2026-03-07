@@ -10,7 +10,5 @@
 - Cores de acordo com resultado
 
 ## Atualizações futuras
-- Adicionar SplashScreen
-- Adicionar Landscape Layout
 - Arrumar textos para `res/values/strings.xml`
 - Adicionar .gif para decisão de pedra, papel ou tesoura (usando glide)

@@ -44,4 +44,7 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+
+//    Implementando Glide para permitir uso de .gif no código
+    implementation("com.github.bumptech.glide:glide:5.0.5")
 }
