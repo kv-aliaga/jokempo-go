@@ -1,11 +1,16 @@
-# Jokempo
+# Jokempo Go!
 
 -  Lição de Desenvolvimento de Aplicações Móveis do 2º ano da Germinare Tech
 - Aplicativo mobile simples de pedra, papel e tesoura
-- Futuramente será adicionado splashscreen
 
 ## Funcionalidades
 
 - Escolher entre pedra, papel ou tesoura
 - Placar dinâmico
 - Cores de acordo com resultado
+
+## Atualizações futuras
+- Adicionar SplashScreen
+- Adicionar Landscape Layout
+- Arrumar textos para `res/values/strings.xml`
+- Adicionar .gif para decisão de pedra, papel ou tesoura (usando glide)
