@@ -8,6 +8,3 @@
 - Escolher entre pedra, papel ou tesoura
 - Placar dinâmico
 - Cores de acordo com resultado
-
-## Atualizações futuras
-- Arrumar textos para `res/values/strings.xml`
