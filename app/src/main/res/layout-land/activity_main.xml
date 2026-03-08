@@ -7,14 +7,13 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <Switch
-        android:id="@+id/switchGif2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
-        android:text="Ativar Gifs"
+    <androidx.appcompat.widget.SwitchCompat
+        android:id="@+id/switchGif"
+        android:layout_width="132dp"
+        android:layout_height="36dp"
+        android:text="@string/activate_gifs"
         app:layout_constraintEnd_toStartOf="@+id/textView8"
-        app:layout_constraintHorizontal_bias="0.462"
+        app:layout_constraintHorizontal_bias="0.475"
         app:layout_constraintStart_toEndOf="@+id/textView"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -24,7 +23,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:text="Escolha uma opção abaixo:"
+        android:text="@string/rps_choice"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -34,7 +33,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:layout_marginBottom="21dp"
-        android:text="@string/escolha_do_or_culo"
+        android:text="@string/oracle_choice"
         app:layout_constraintBottom_toTopOf="@+id/oraculoImg"
         app:layout_constraintEnd_toStartOf="@+id/textView8"
         app:layout_constraintStart_toEndOf="@+id/framePedra"
@@ -105,7 +104,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"
         android:backgroundTint="#001BA0"
-        android:text="JOGAR"
+        android:text="@string/play"
         android:textColorLink="#FFFFFF"
         app:cornerRadius="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -141,7 +140,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="36dp"
-        android:text="x"
+        android:text="@string/x"
         android:textSize="48sp"
         app:layout_constraintBottom_toTopOf="@+id/placarComputador"
         app:layout_constraintEnd_toEndOf="parent"
@@ -164,7 +163,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="36dp"
-        android:text="Você"
+        android:text="@string/you"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -174,7 +173,7 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="20dp"
         android:layout_marginBottom="16dp"
-        android:text="Oráculo"
+        android:text="@string/oracle"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 

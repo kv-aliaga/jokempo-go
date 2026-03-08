@@ -1,4 +1,17 @@
 <resources>
-    <string name="app_name">Jokempô Go!</string>
-    <string name="escolha_do_or_culo">Escolha do oráculo:</string>
+<!--    Texto que sempre vai aparecer-->
+    <string name="app_name" translatable="false">Jokempô Go!</string>
+    <string name="oracle_choice">Escolha do oráculo:</string>
+    <string name="play">JOGAR</string>
+    <string name="rps_choice">Selecione uma opção abaixo:</string>
+    <string name="x" translatable="false">x</string>
+    <string name="you">Você</string>
+    <string name="oracle">Oráculo</string>
+    <string name="activate_gifs">Ativar Gifs</string>
+
+<!--    Texto variável -->
+    <string name="draw">Empate!</string>
+    <string name="win">Você Venceu!</string>
+    <string name="lost">Você Perdeu!</string>
+    <string name="choose_anything">Você não escolheu nada!</string>
 </resources>

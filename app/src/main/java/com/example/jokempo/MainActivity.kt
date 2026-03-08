@@ -4,10 +4,10 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.FrameLayout
 import android.widget.ImageView
-import android.widget.Switch
 import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.SwitchCompat
 import androidx.core.content.ContextCompat
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
@@ -19,7 +19,7 @@ class MainActivity : AppCompatActivity() {
     fun gifImg(gifUrl: String, imgView: ImageView){
         Glide.with(this)
             .load(gifUrl)
-            .placeholder(R.drawable.baseline_square)
+            .placeholder(R.drawable.padrao)
             .into(imgView)
     }
 
@@ -67,7 +67,7 @@ class MainActivity : AppCompatActivity() {
         val placarUsuario = findViewById<TextView>(R.id.placarUsuario)
         val placarComputador = findViewById<TextView>(R.id.placarComputador)
 
-        val switchGif = findViewById<Switch>(R.id.switchGif)
+        val switchGif = findViewById<SwitchCompat>(R.id.switchGif)
 
         // Criando variáveis
         var escolha = 0
@@ -116,22 +116,22 @@ class MainActivity : AppCompatActivity() {
 //            Saída de dados de acordo com resultado
             if (escolha == escolhaComputador) {
                 resultado.setTextColor(ContextCompat.getColor(this ,R.color.yellow))
-                resultado.text = "Empate!"
+                resultado.text = getString(R.string.draw)
             }
 
             else if (escolha == 1 && escolhaComputador == 2 || escolha == 2 && escolhaComputador == 3 || escolha == 3 && escolhaComputador == 1) {
                 resultado.setTextColor(ContextCompat.getColor(this, R.color.red))
-                resultado.text = "Você perdeu!"
+                resultado.text = getString(R.string.lost)
                 placarComputador.text = (placarComputadorAtual + 1).toString()
             }
 
             else if (escolha == 1 && escolhaComputador == 3 || escolha == 2 && escolhaComputador == 1 || escolha == 3 && escolhaComputador == 2) {
                 resultado.setTextColor(ContextCompat.getColor(this, R.color.green))
-                resultado.text = "Você venceu!"
+                resultado.text = getString(R.string.win)
                 placarUsuario.text = (placarUsuarioAtual + 1).toString()
             }
 
-            else resultado.text = "Você não escolheu nada!"
+            else resultado.text = getString(R.string.choose_anything)
         }
     }
 

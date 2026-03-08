@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="oracle_choice">Great Oracle\'s choice:</string>
+    <string name="play">PLAY</string>
+    <string name="rps_choice">Select an option below:</string>
+    <string name="you">You</string>
+    <string name="oracle">Great Oracle</string>
+    <string name="activate_gifs">Activate Gifs</string>
+    <string name="draw">Draw!</string>
+    <string name="win">You Win!</string>
+    <string name="lost">You Lost!</string>
+    <string name="choose_anything">You didn\'t choose anything!</string>
+</resources>
