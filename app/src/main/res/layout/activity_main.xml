@@ -176,6 +176,9 @@
         android:layout_marginStart="16dp"
         android:text="@string/activate_gifs"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:textColor="#FFFFFF"
+        app:thumbTint="#1F1F1F"
+        app:trackTint="#D1D5D8" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

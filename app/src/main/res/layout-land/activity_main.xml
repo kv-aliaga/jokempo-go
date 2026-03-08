@@ -15,7 +15,10 @@
         app:layout_constraintEnd_toStartOf="@+id/textView8"
         app:layout_constraintHorizontal_bias="0.475"
         app:layout_constraintStart_toEndOf="@+id/textView"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:textColor="#FFFFFF"
+        app:thumbTint="#1F1F1F"
+        app:trackTint="#D1D5D8" />
 
     <TextView
         android:id="@+id/textView2"
