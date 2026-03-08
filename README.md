@@ -11,4 +11,3 @@
 
 ## Atualizações futuras
 - Arrumar textos para `res/values/strings.xml`
-- Adicionar .gif para decisão de pedra, papel ou tesoura (usando glide)

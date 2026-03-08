@@ -7,6 +7,17 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+    <Switch
+        android:id="@+id/switchGif2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="Ativar Gifs"
+        app:layout_constraintEnd_toStartOf="@+id/textView8"
+        app:layout_constraintHorizontal_bias="0.462"
+        app:layout_constraintStart_toEndOf="@+id/textView"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <TextView
         android:id="@+id/textView2"
         android:layout_width="wrap_content"

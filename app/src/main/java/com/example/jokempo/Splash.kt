@@ -22,10 +22,13 @@ class Splash : AppCompatActivity() {
             insets
         }
 
+//        Capturando variáveis
         val joTxt = findViewById<TextView>(R.id.joTxt)
         val kenTxt = findViewById<TextView>(R.id.kenTxt)
         val poTxt = findViewById<TextView>(R.id.poTxt)
         val goTxt = findViewById<TextView>(R.id.goTxt)
+
+//        Seta o que o programa precisa fazer ao iniciar
         lifecycleScope.launch {
             joTxt.text = "JO"
             delay(700)
@@ -38,6 +41,7 @@ class Splash : AppCompatActivity() {
 
             goTxt.text = "GO!"
 
+//            vai de Splash.kt para MainActivity.kt (parse em java)
             val rota = Intent(this@Splash, MainActivity::class.java)
             startActivity(rota)
             finish()

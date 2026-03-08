@@ -4,15 +4,44 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.FrameLayout
 import android.widget.ImageView
+import android.widget.Switch
 import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.bumptech.glide.Glide
 import kotlin.random.Random
 
 class MainActivity : AppCompatActivity() {
+//    Função para inserir gif em ImageView
+    fun gifImg(gifUrl: String, imgView: ImageView){
+        Glide.with(this)
+            .load(gifUrl)
+            .placeholder(R.drawable.baseline_square)
+            .into(imgView)
+    }
+
+//    Função para inserir imagens de acordo com escolha randomica
+    fun escolhaOraculo(switchAtivado: Boolean, escolhaComputador: Int, imgOraculo: ImageView){
+        if (switchAtivado) {
+            when (escolhaComputador) {
+                1 -> gifImg("https://media.tenor.com/m9aejYLkmKwAAAAM/rock-paper-scissors-roshambo.gif", imgOraculo) // pedra
+                2 -> gifImg("https://media.tenor.com/ZiaTJpV9LGgAAAAM/rock-paper-scissors-roshambo.gif", imgOraculo) // papel
+                3 -> gifImg("https://media.tenor.com/PffpNM5BrjQAAAAM/rock-paper-scissors-roshambo.gif", imgOraculo) // tesoura
+                else -> imgOraculo.setImageResource(R.drawable.padrao)
+            }
+        } else {
+            when (escolhaComputador) {
+                1 -> imgOraculo.setImageResource(R.drawable.pedra)
+                2 -> imgOraculo.setImageResource(R.drawable.papel)
+                3 -> imgOraculo.setImageResource(R.drawable.tesoura)
+                else -> imgOraculo.setImageResource(R.drawable.padrao)
+            }
+        }
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -38,9 +67,12 @@ class MainActivity : AppCompatActivity() {
         val placarUsuario = findViewById<TextView>(R.id.placarUsuario)
         val placarComputador = findViewById<TextView>(R.id.placarComputador)
 
+        val switchGif = findViewById<Switch>(R.id.switchGif)
+
         // Criando variáveis
         var escolha = 0
 
+//        Limpa cores dos FrameLayouts-container de cada ImageView de seleção
         fun limparSelecao(){
             framePedra.setBackgroundColor(ContextCompat.getColor(this, R.color.transparent))
             framePapel.setBackgroundColor(ContextCompat.getColor(this, R.color.transparent))
@@ -48,6 +80,7 @@ class MainActivity : AppCompatActivity() {
             escolha = 0
         }
 
+//        Click Listeners das seleções, primeiro limpa a seleção anterior, depois muda o FrameLayout para cinza, por fim seta escolha com seu id
         imgPedra.setOnClickListener {
             limparSelecao()
             framePedra.setBackgroundColor(ContextCompat.getColor(this, R.color.gray))
@@ -66,18 +99,21 @@ class MainActivity : AppCompatActivity() {
             escolha = 3
         }
 
+//        Botão com ação principal
         btnJogar.setOnClickListener {
+//            Cria variáveis de escolha randomica e placar
             val escolhaComputador = Random.nextInt(1, 4)
             val placarUsuarioAtual = placarUsuario.text.toString().toInt()
             val placarComputadorAtual = placarComputador.text.toString().toInt()
 
-            when (escolhaComputador){
-                1 -> imgOraculo.setImageResource(R.drawable.pedra)
-                2 -> imgOraculo.setImageResource(R.drawable.papel)
-                3 -> imgOraculo.setImageResource(R.drawable.tesoura)
-                else -> imgOraculo.setImageResource(R.drawable.padrao)
+//            Na mudança do switch, chama função
+            switchGif.setOnCheckedChangeListener { _, isAtivado ->
+                escolhaOraculo(isAtivado, escolhaComputador, imgOraculo)
             }
 
+            escolhaOraculo(switchGif.isChecked, escolhaComputador, imgOraculo)
+
+//            Saída de dados de acordo com resultado
             if (escolha == escolhaComputador) {
                 resultado.setTextColor(ContextCompat.getColor(this ,R.color.yellow))
                 resultado.text = "Empate!"
